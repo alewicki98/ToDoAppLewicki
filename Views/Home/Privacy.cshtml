@@ -1,0 +1,26 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+public class PrivacyController : Controller
+{
+    public IActionResult Index()
+    {
+        // Przykład: Pobierz listę zadań z serwisu/z bazy danych
+        var tasks = GetTasksFromDatabase();
+
+        // Przekazanie listy zadań do widoku Privacy
+        return View(tasks);
+    }
+
+    private List<TaskModel>
+    GetTasksFromDatabase()
+    {
+    // Tutaj implementuj logikę pobierania listy zadań z serwisu/z bazy danych
+    // Przykład: Zwróć twardo zakodowaną listę zadań do celów demonstracyjnych
+    return new List<TaskModel>
+        {
+        new TaskModel { Id = 1, Title = "Zadanie 1" },
+        new TaskModel { Id = 2, Title = "Zadanie 2" },
+        // ...
+        };
+    }
+}
